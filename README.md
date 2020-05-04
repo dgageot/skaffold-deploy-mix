@@ -3,6 +3,7 @@
 Reproduce https://github.com/GoogleContainerTools/skaffold/issues/1753
 
 ```
+unset SKAFFOLD_LABEL # Make sure runId is not overriden
 skaffold build -q > build_result.json
 skaffold deploy --build-artifacts=build_result.json -p david
 skaffold deploy --tail --build-artifacts=build_result.json -p world
@@ -11,6 +12,7 @@ skaffold deploy --tail --build-artifacts=build_result.json -p world
 or
 
 ```
+unset SKAFFOLD_LABEL # Make sure runId is not overriden
 make test
 ```
 
