@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: getting-started-world
+spec:
+  containers:
+  - name: getting-started
+    image: skaffold-example
+    env:
+      - name: "WHO"
+        value: "World"

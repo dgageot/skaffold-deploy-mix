@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta2
+kind: Config
+build:
+  artifacts:
+  - image: skaffold-example
+
+profiles:
+  - name: world
+    deploy:
+      kubectl:
+        manifests:
+          - k8s-pod-world.yaml
+  - name: david
+    deploy:
+      kubectl:
+        manifests:
+          - k8s-pod-david.yaml
